@@ -1,38 +1,207 @@
+
+* {
+  font-family: 'Anek Telugu', sans-serif;
+  color: rgb(250, 250, 250);
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  max-width: 1550px;
+  width: 100%;
   min-height: 100vh;
+  margin: 0;
+  box-sizing: 0 2px 6px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color:rgb(255, 255, 255);
+  font-family: 'Anek Telugu', sans-serif;
+  
+ 
+}
+font {
+  color: rgb(255, 255, 255);
+}
+button {
+  font-family: 'Anek Telugu', sans-serif, 
+}
+
+/*------HEADER------*/
+
+.header {
+  background-color: black;
+  color: rgb (250, 250, 250);
+  width: 97%;
+  min-height: 100px;
+  max-width: 1530px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+a:hover {
+  color: #ffffffcc;
+}
+a.nav.link {
+  cursor: pointer;
+}
+.logo_cb_header {
+  box-sizing: content-box;
+  cursor: pointer;
+ 
+}
+
+header .logo_cart_header {
+  position: relative;
+  cursor: pointer;
+}
+
+
+header img .logo_cart_header {
+  width: 45px;
+  height: 45px;
+}
+
+header .logo_cart_header span {
+  position: absolute;
+  top: -1rem;
+  right: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color:black;
+  padding: 0rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: #ffffff;
+}
+ div .container-fluid {
+  padding: 5px;
+ }
+ nav. {
+  margin: 3px;
+ }
+
+
+/*------------- MAIN ----------------*/
+main {
+  background-color: black;
+  color: rgb (250, 250, 250);
+  width: 97%;
+  min-height: 100px;
+  max-width: 1530px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  box-sizing: border-box;
+}
+
+h1 .linkMainShop {
+text-align: center;
+margin: auto;
+
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  margin: 10px;
+  border-radius: 5px;
+  max-width: 300px;
+  justify-content: space-around;
+  font-family: 'Anek Telugu', sans-serif;
+}
+.container {
+  padding: '2px' '16px';
+}
+.container.item.row {
+  padding: 15px 15px;
+  margin: 0 auto;
+}
+
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+select.select_size.form-select {
+  color:#ffffffcc;
+  background-color: #524e4e4d;
+  font-weight: 700;
+  max-width: 50%;
+  cursor: pointer;
+  border: 1px solid rgb(166 166 166);
+  border-radius: 3px;
+  
+
+}
+
+.material-symbols-outlined {
+font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48,
+  
+  
+}
+
+
+
+
+
+
+.footer {
+  background-color: black;
+  margin: 0 auto;
+  padding-top: 25rem;
+ 
+}
+
+p {
   color: white;
+  font-family: 'Anek Telugu', sans-serif;
+ 
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  margin: 10px;
+  border-radius: 5px;
+  max-width: 300px;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/*------ media ------*/
+@media only screen and (max-width: 600px){
+  
 }
+
+
+
