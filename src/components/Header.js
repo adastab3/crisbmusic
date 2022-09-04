@@ -8,12 +8,14 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+//import {useState} from 'react';
 
 
 
 
-function Header() {
+
+function Header({add}) {
     return (
 
 
@@ -23,11 +25,11 @@ function Header() {
                 <Row>
                     <Col>
                         <Link to='/'>
-                            <img src={logo_headercrisb} className='logo_cb_header' alt='Cris B Music Shop' width='400px' /></Link>
+                            <img src={logo_headercrisb} className='logo_cb_header' alt='Cris B Music Shop' width='300px' /></Link>
                     </Col>
                     <Col>
-                        <Link to='/cart'><img id="logo_cart_header" className='material-symbols-outlined' src={logo_cart} alt='cart' width={'30px'} />
-                            <span className='item_totaL'>0</span></Link>
+                        <Link to='/cart'><img id="logo_cart_header" className='material-symbols-outlined' src={logo_cart} alt='cart' width={'30px'} /></Link>
+                            <span className='item_totaL'>{add}</span>
                     </Col>
                 </Row>
 

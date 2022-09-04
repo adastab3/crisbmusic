@@ -1,34 +1,99 @@
 import { Container, Col, Row, Card, Button, Form } from "react-bootstrap";
-import { useState } from 'react';
+//import { useState } from 'react';
 import { Link } from 'react-router-dom';
+//import addItem from "../service/AddItem";
 
 
-function Item(props) {
-    let [add, setAdd] = useState(0)
+function Item({add, producto, category, setAdd, cart, setCart, size, setSize, quant, setQuant}) {
+    
+    function addToCart(){
+      
+        setAdd(add + 1);
+        
+       cart.push({id:producto.id,
+            image:producto.image,
+            title:producto.name,
+            size: {size},
+            price:producto.price,
+            
+          
+            
+        })
+        setCart(cart)
+        
+        setSize("")
+       
+      
+        }
 
-    if (props.producto.category === 'wear') {
+    function addToCart2(){
+            setAdd(add + 1);
+            
+        
+       cart.push({id:producto.id,
+            image:producto.image,
+            title:producto.name,
+            price:producto.price,
+            size:"onesize",
+        
+           
+            
+        })
+        setCart(cart)
+       
+        
+
+        }   
+    
+
+    if (category === 'wear') {
 
         return (
 
-            <Container className='item'>
+            <Container className='item' key={producto.id}>
                 <Row>
 
                     <Col>
-                        <Card.Img variant="top" src={props.producto.image} alt={props.producto.name} style={{ width: '30rem', backgroundColor: 'black', border: 'grey' }} />
+                        <Card.Img variant="top" src={producto.image} alt={producto.name} style={{ width: '30rem', backgroundColor: 'black', border: 'grey' }} />
                     </Col>
                     <Col>
                         <Card.Body>
-                            <Card.Title>{props.producto.name}</Card.Title>
-                            <Card.Text>€ {props.producto.price}.00 </Card.Text>
-                            <p>SIZE</p><Form.Select aria-label="Default select example" className='select_size'>
-                                <option></option>
-                                <option value="1">S</option>
-                                <option value="2">M</option>
-                                <option value="3">L</option>
-                                <option value="4">XL</option>
+                            <Card.Title>{producto.name}</Card.Title>
+                            <Card.Text>€ {producto.price}.00 </Card.Text>
+                            <p>SIZE</p><Form.Select aria-label="Default select example" className='select_size' onChange={(e)=> setSize(e.target.value)}>
+                                <option>Select size</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
                             </Form.Select>
-                            <Button variant="dark" onClick={() => setAdd(add++)} >ADD TO CART</Button>
-                            <Card.Text>{props.producto.description}</Card.Text>
+                            <Button type='button' variant="dark" onClick={()=> (addToCart() )
+                            }>ADD TO CART</Button>
+                            <Card.Text>{producto.description}</Card.Text>
+                            <div><Link to='/products' ><Button variant="dark">Continue shopping</Button></Link></div>
+
+
+                        </Card.Body>
+                    </Col>
+                </Row>
+            </Container>
+        )
+    } if(category === 'wearcap'){
+        return (
+            <Container className='item' key={producto.id}>
+                <Row>
+
+                    <Col>
+                        <Card.Img variant="top" src={producto.image} alt={producto.name} style={{ width: '30rem', backgroundColor: 'black', border: 'grey' }} />
+                    </Col>
+                    <Col>
+                        <Card.Body>
+                            <Card.Title>{producto.name}</Card.Title>
+                            <Card.Text>€ {producto.price}.00 </Card.Text>
+                            <Button variant="dark" onClick={()=> (addToCart2()) 
+                                }
+                                >ADD TO CART</Button>
+                            <Card.Text>{producto.description}</Card.Text>
                             <div><Link to='/products' ><Button variant="dark">CONTINUE SHOPPING</Button></Link></div>
 
 
@@ -36,21 +101,24 @@ function Item(props) {
                     </Col>
                 </Row>
             </Container>
+
         )
     } else {
         return (
-            <Container className='item'>
+            <Container className='item' key={producto.id}>
                 <Row>
 
                     <Col>
-                        <Card.Img variant="top" src={props.producto.image} alt={props.producto.name} style={{ width: '30rem', backgroundColor: 'black', border: 'grey' }} />
+                        <Card.Img variant="top" src={producto.image} alt={producto.name} style={{ width: '30rem', backgroundColor: 'black', border: 'grey' }} />
                     </Col>
                     <Col>
                         <Card.Body>
-                            <Card.Title>{props.producto.name}</Card.Title>
-                            <Card.Text>€ {props.producto.price}.00 </Card.Text>
-                            <Button variant="dark" onClick={() => setAdd(add++)} >ADD TO CART</Button>
-                            <Card.Text>{props.producto.description}</Card.Text>
+                            <Card.Title>{producto.name}</Card.Title>
+                            <Card.Text>€ {producto.price}.00 </Card.Text>
+                            <Button variant="dark" onClick={()=> addToCart2() 
+                                }
+                                >ADD TO CART</Button>
+                            <Card.Text>{producto.description}</Card.Text>
                             <div><Link to='/products' ><Button variant="dark">CONTINUE SHOPPING</Button></Link></div>
 
 
@@ -58,10 +126,9 @@ function Item(props) {
                     </Col>
                 </Row>
             </Container>
-        )
+      )}}
 
-    }
 
-}
+
 
 export default Item;

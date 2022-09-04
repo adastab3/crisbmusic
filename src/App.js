@@ -14,26 +14,37 @@ import Item from './components/Item';
 
 
 
+
 function App() {
   let [data, setData] = useState([])
+  let [add, setAdd]= useState(0)
+  let [cart, setCart] = useState([])
+  /*let [quant, setQuant] =useState(1)*/
+  let [size, setSize] = useState("")
+  
+  
 
     useEffect(() => {fetch('https://apimocha.com/myshop/v1/allproducts').then(resp => resp.json()).then(datos => {
       setData(datos)
 })},[])
+
+    useEffect(()=>{setAdd(cart.length)},[cart.length])
+    /*useEffect(()=>{setQuant1(quant1)},[quant1])
+    useEffect(()=>{setQuant2(quant2)},[quant2])*/
 
 
   return (
     
  <BrowserRouter>
  
-    <Header /> 
+    <Header add={add}/> 
  
     <Routes>
       <Route path='/' element = {<Inicio />}></Route>
       <Route path='/products' element = {<div className='catalogo'> {data.map ((producto, index)=> {return <Products producto={producto} key={index}/>})}</div>}/>
-      {data.map((producto, index)=> {return (<Route path={'/' + producto.id} element= {<Item category={producto.category} producto={producto} key={index}/>} />)})}
+      {data.map((producto, index)=> {return (<Route path={'/' + producto.id} element= {<Item category={producto.category} producto={producto} key={index} setAdd={setAdd} add={add} cart={cart} setCart={setCart} size={size} setSize={setSize} />} />)})}
       <Route path='/returns' element ={<Returns />}></Route>
-      <Route path='/cart' element = {<Cart />}></Route>
+      <Route path='/cart' element = {<Cart add={add} setAdd={setAdd} cart={cart} setCart={setCart} size={size} setSize={setSize}/>}></Route>
     </Routes>
    
     <Footer />

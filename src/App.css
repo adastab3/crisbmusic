@@ -7,7 +7,7 @@
   max-width: 1550px;
   width: 100%;
   min-height: 100vh;
-  margin: 0;
+  margin: 0 auto;
   box-sizing: 0 2px 6px;
   padding: 0 15px;
   box-sizing: border-box;
@@ -56,6 +56,25 @@ a:hover {
 a.nav.link {
   cursor: pointer;
 }
+li {
+  list-style: none;
+}
+
+header ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  padding: 0 1rem;
+}
+header ul li a{
+  font-weight: bold;
+}
+
+
+
 .logo_cb_header {
   box-sizing: content-box;
   cursor: pointer;
@@ -65,6 +84,7 @@ a.nav.link {
 header .logo_cart_header {
   position: relative;
   cursor: pointer;
+  
 }
 
 
@@ -93,9 +113,19 @@ header .logo_cart_header span {
  div .container-fluid {
   padding: 5px;
  }
- nav. {
+ nav {
   margin: 3px;
+  padding: 15px;
  }
+ .material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48,
+    
+    
+  }
 
 
 /*------------- MAIN ----------------*/
@@ -157,17 +187,59 @@ select.select_size.form-select {
 
 }
 
-.material-symbols-outlined {
-font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48,
-  
-  
+/*----------------CART------------------*/
+div .cart_header{
+  margin-bottom: 0.7rem;
+  text-align: center;
+  font-family: 'Anel Telugu', sans-serif;
+  display: block;
+  padding-left: 22px;
+  padding-right: 22px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 125px 5px;
 }
 
+div .cart_header svg {
+  color: black;
+}
 
+h1 .cart_header__title {
+  margin-bottom: 0.5rem;
+  font-family: 'Anek Telugu', sans-serif;
+  word-wrap: break-word;
+  display: block;
+  text-align: center;
+}
+
+div .text_link a {
+  cursor: pointer;
+  text-decoration: underline;
+
+}
+div .cart_header td {
+  border-style: none;
+
+}
+
+div .cart_footer button{
+  cursor: pointer;
+  margin-bottom: 0;
+  min-height: 44px;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 2px;
+  padding: 8px 15px;
+  color: black;
+  font-weight: bold;
+  font-size:large;
+
+
+}
 
 
 
@@ -198,8 +270,38 @@ p {
 }
 
 
+/*------------------------ CART ------------------------*/
+img.cart__image {
+  max-height: 100px;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+}
+div.list_view_item__title{
+  padding-left: 0;
+  vertical-align: top;
+  text-align: left !important;
+
+}
+input.input__quant {
+  border: 1px solid var(--color-border-form);
+    background-color: whitesmoke;
+    color: black;
+    max-width: 100%;
+    line-height: 1.2;
+    border-radius: 2px;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%
+}
+
+
+
 /*------ media ------*/
 @media only screen and (max-width: 600px){
+  header ul {
+    display: none;
+  }
+  
   
 }
 
